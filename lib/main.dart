@@ -11,11 +11,12 @@ void main() {
 
 class MyApp extends StatelessWidget {
   MyApp({super.key});
-
+  // programming fundamentals
+  //variables: you can store different types of info into variables
   String name = "Akriti Subedi";
   int age = 27;
   double pi = 3.14159;
-  bool isBeginner = false;
+  bool isBeginner = true;
 
   /*
   BASIC MATH OPERATORS:
@@ -33,10 +34,47 @@ class MyApp extends StatelessWidget {
   3 < 2 -> FALSE, LESS THAN
   5 >= 5 -> TRUE, GREATER OR EQUAL TO
 
+  LOGICAL OPERATORS
+  AND OPERATORS RETURN TRUE IF BOTH SIDES ARE TRUE
+  isBeginner && (age <18) -> return true
+
+  or OPERATORS RETURN TRUE IF at least ONE SIDES IS TRUE
+  isBeginner && (age <18) -> return true
+
+  NOT OPERATORS RETURNS THE OPPOSITE VALUES
+  isBeginner -> return FALSE
    */
+
+  /* 
+  CONTROL FLOW
+  if (condition) {
+    do something
+  }
+
+  if (condition){
+    do something
+  }else if(another condition){
+    do something else
+  }
+
+  if(condition){
+    do something
+  }else {
+    do something else
+
+  }
+  */
 
   @override
   Widget build(BuildContext context) {
+    print(isBeginner && (age < 18));
+    if (age >= 13) {
+      print("you cannot watch movies");
+    } else if (age >= 22) {
+      print("you can watch movies");
+    } else {
+      print("You can watch movies at free time");
+    }
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(),
