@@ -65,15 +65,34 @@ class MyApp extends StatelessWidget {
   }
   */
 
+  /* 
+  for LOOPS
+   imagine you have a box of 10 diff colored crayons and you want to draw a circle with each other.Instead of saying:
+
+   "Draw a circle with 1st crayon, then draw a circle with the 2nd crayon,etc.."
+   Its much easier to say:
+   "For each crayon in the box, draw a circle"
+   for(initialization; condition; iteration){
+
+   }
+   WHILE LOOPS
+  */
+
   @override
   Widget build(BuildContext context) {
-    print(isBeginner && (age < 18));
-    if (age >= 13) {
-      print("you cannot watch movies");
-    } else if (age >= 22) {
-      print("you can watch movies");
-    } else {
-      print("You can watch movies at free time");
+    //FOR LOOP
+    for (int i = 0; i <= 8; i++) {
+      if (i == 6) {
+        break;
+        // continue;
+      }
+      print(i);
+    }
+    // WHILE LOOP
+    int countDown = 5;
+    while (countDown > 0) {
+      print(countDown);
+      countDown--;
     }
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
