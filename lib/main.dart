@@ -80,17 +80,26 @@ class MyApp extends StatelessWidget {
    FUNCTIONS
 
   */
-  //great functions
+  //basic functions
   void greet() {
     print('hello akriti !');
   }
 
+  //functions with parameters
   void greetPerson(String name, int age) {
-    print("Hello "  + name);
+    print("Hello " + name);
+  }
+
+  //functions with return type
+  int add(int a, int b) {
+    int sum = a + b;
+    return sum;
   }
 
   @override
   Widget build(BuildContext context) {
+    int mySum = add(30, 5);
+    print(mySum);
     greet();
     greetPerson("Akriti Subedi", 20);
     //FOR LOOP
