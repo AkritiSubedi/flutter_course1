@@ -76,10 +76,23 @@ class MyApp extends StatelessWidget {
 
    }
    WHILE LOOPS
+   ---------------------------------------------
+   FUNCTIONS
+
   */
+  //great functions
+  void greet() {
+    print('hello akriti !');
+  }
+
+  void greetPerson(String name, int age) {
+    print("Hello "  + name);
+  }
 
   @override
   Widget build(BuildContext context) {
+    greet();
+    greetPerson("Akriti Subedi", 20);
     //FOR LOOP
     for (int i = 0; i <= 8; i++) {
       if (i == 6) {
