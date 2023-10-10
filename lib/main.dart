@@ -119,11 +119,18 @@ class MyApp extends StatelessWidget {
 
   // SET is unordered collections of unique elements
   Set<String> uniqueNames = {"Akriti", "Kritika", "Ritima"};
+  // MAP is stored as a key value pairs
+  Map user = {
+    'name': "Akriti",
+    'age': 21,
+    'height': '5ft',
+  };
 
   @override
   Widget build(BuildContext context) {
     printNumbers();
     printnames();
+    print(user['age''height']);
     int mySum = add(30, 5);
     print(mySum);
     greet();
