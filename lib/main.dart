@@ -99,6 +99,7 @@ class MyApp extends StatelessWidget {
   /*
   DATA STRUCTURES
    */
+  //List is the ordered collections of elements, can have duplicates.
   List<int> numbers = [1, 2, 3];
   // numbers[0] -> 1
   // numbers[1] -> 2
@@ -115,6 +116,9 @@ class MyApp extends StatelessWidget {
       print(names[i]);
     }
   }
+
+  // SET is unordered collections of unique elements
+  Set<String> uniqueNames = {"Akriti", "Kritika", "Ritima"};
 
   @override
   Widget build(BuildContext context) {
