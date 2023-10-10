@@ -96,12 +96,34 @@ class MyApp extends StatelessWidget {
     return sum;
   }
 
+  /*
+  DATA STRUCTURES
+   */
+  List<int> numbers = [1, 2, 3];
+  // numbers[0] -> 1
+  // numbers[1] -> 2
+  // numbers[2] -> 3
+  List<String> names = ["Akriti", "Kritika", "Ritima"];
+  void printNumbers() {
+    for (int i = 0; i < numbers.length; i++) {
+      print(numbers[i]);
+    }
+  }
+
+  void printnames() {
+    for (int i = 0; i < names.length; i++) {
+      print(names[i]);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
+    printNumbers();
+    printnames();
     int mySum = add(30, 5);
     print(mySum);
     greet();
-    greetPerson("Akriti Subedi", 20);
+    greetPerson("Akriti Subedi", 22);
     //FOR LOOP
     for (int i = 0; i <= 8; i++) {
       if (i == 6) {
