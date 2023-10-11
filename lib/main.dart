@@ -5,12 +5,7 @@ import 'package:flutter_course1/main.dart';
 void main() {
   runApp(MyApps());
 }
-class MyApps extends StatelessWidget {
-  const MyApps({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Colors.blue,
