@@ -13,20 +13,26 @@ class MyApps extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Colors.blue,
-        body: Center(child: Container(
-          height: 300, 
-          width: 300, color: 
-          Colors.deepPurple,
-          padding: EdgeInsets.all(25),
-          child: Text("Akriti",
-          style: TextStyle(
-            color: Colors.amber,
-            fontSize:28,
-            fontWeight: FontWeight.bold,
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Expanded(
+              child: Container(
+                color: Colors.deepPurple,
+              ),
             ),
-          ),
-          )),
+            Expanded(
+              child: Container(
+                color: Colors.deepPurple[400],
+              ),
+            ),
+            Expanded(
+              child: Container(
+                color: Colors.deepPurple[200],
+              ),
+            ),
+          ],
+        )
       ),
     );
   }
