@@ -13,24 +13,20 @@ class MyApps extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        body: ListView(
           children: [
-            Expanded(
-              child: Container(
+            Container(
+              height: 350,
                 color: Colors.deepPurple,
               ),
-            ),
-            Expanded(
-              child: Container(
+
+              Container(height: 350,
                 color: Colors.deepPurple[400],
               ),
-            ),
-            Expanded(
-              child: Container(
+            Container(
+              height: 350,
                 color: Colors.deepPurple[200],
               ),
-            ),
           ],
         )
       ),
