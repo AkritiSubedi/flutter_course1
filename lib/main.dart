@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_course1/pages/first_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,21 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: Center(
-          child: GestureDetector(
-            onTap: userTapped,
-            child: Container(
-              height: 200,
-              width: 200,
-              color: Colors.deepPurple[300],
-              child: Center(
-                child: Text("Tap me!"),
-              ),
-            ),
-          ),
-        ),
-      ),
+      home: Firstpage(),
     );
   }
 }
