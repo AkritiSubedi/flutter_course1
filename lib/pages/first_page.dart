@@ -8,17 +8,36 @@ class Firstpage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("1st page")),
-      body: Center(
-        child: ElevatedButton(
-          child: Text("Go to Second page"),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => SecondPage(),
+      drawer: Drawer(
+        backgroundColor: Colors.deepPurple,
+        child: Column(
+          children: [
+            DrawerHeader(
+              child: Icon(
+                Icons.favorite,
+                size: 48,
               ),
-            );
-          },
+            ),
+            //homepage list tile
+            ListTile(
+              leading: Icon(Icons.home),
+              title: Text("HOME"),
+              onTap: () {
+                // pop drawer first
+                Navigator.pop(context);
+
+                //go to home page
+                Navigator.pushNamed(context, '/homepage');
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.settings),
+              title: Text("SETTINGS"),
+              onTap: () {
+                Navigator.pushNamed(context, '/settingspage');
+              },
+            ),
+          ],
         ),
       ),
     );
