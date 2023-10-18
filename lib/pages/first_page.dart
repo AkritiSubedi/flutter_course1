@@ -1,45 +1,56 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_course1/pages/home_page.dart';
+import 'package:flutter_course1/pages/profile_page.dart';
 import 'package:flutter_course1/pages/second_page.dart';
+import 'package:flutter_course1/pages/settings_page.dart';
 
-class Firstpage extends StatelessWidget {
-  const Firstpage({super.key});
+class Firstpage extends StatefulWidget {
+  Firstpage({super.key});
+
+  @override
+  State<Firstpage> createState() => _FirstpageState();
+}
+
+class _FirstpageState extends State<Firstpage> {
+  // this keys tract of the current page to display
+  int _selectedIndex = 0;
+
+  //this method updates the new selected index
+  void _navigateBottomBar(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
+  //the pages we have in our app
+  final List _pages = [
+    // homepage
+    HomePage(),
+
+    //Profilepage
+    ProfilePage(),
+
+    //settingspage
+    SettingsPage()
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("1st page")),
-      drawer: Drawer(
-        backgroundColor: Colors.deepPurple,
-        child: Column(
-          children: [
-            DrawerHeader(
-              child: Icon(
-                Icons.favorite,
-                size: 48,
-              ),
-            ),
-            //homepage list tile
-            ListTile(
-              leading: Icon(Icons.home),
-              title: Text("HOME"),
-              onTap: () {
-                // pop drawer first
-                Navigator.pop(context);
-
-                //go to home page
-                Navigator.pushNamed(context, '/homepage');
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.settings),
-              title: Text("SETTINGS"),
-              onTap: () {
-                Navigator.pushNamed(context, '/settingspage');
-              },
-            ),
-          ],
-        ),
-      ),
+      body: _pages[_selectedIndex],
+      
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _selectedIndex,
+        onTap: _navigateBottomBar,
+        items: [
+        //home
+        BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+        // profile
+        BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+        // settings
+        BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Settings')
+      ]),
     );
   }
 }
