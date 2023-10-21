@@ -11,7 +11,8 @@ void main() {
 
 
       debugShowCheckedModeBanner: false,
-      home: TodoPage(),
+      home: HomePage(),
+      theme: ThemeData(primarySwatch: Colors.yellow),
     );
   }
 }
