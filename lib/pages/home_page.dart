@@ -1,34 +1,43 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_course1/util/todo_tile.dart';
-class HomePage extends StatelessWidget {
+
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
   @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  //List of todo tasks
+  List toDoList = [
+    ["Make totorial", false],
+    ["Do Exercise", false],
+  ];
+  // checkbox was tapped
+  void checkBoxChanged(bool? value, int index){
+    setState(() {
+      toDoList[index][1] = !toDoList[index][1];
+    });
+  }
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.yellow[200],
+      backgroundColor: Colors.deepPurpleAccent[200],
       appBar: AppBar(
         title: Text('To Do'),
         elevation: 0,
       ),
-      body: ListView(
-        children: [
-          ToDoTile(
-            taskName: "Make Tutorial",
-            taskCompleted: true,
-            onChanged: (p0) => {
-
-            },
-          ),
-          ToDoTile(
-            taskName: "Do excercise",
-            taskCompleted: false,
-            onChanged: (p0) => {
-
-            },
-          )],
-          
-          ),
+      body: ListView.builder(
+        itemCount: toDoList.length,
+        itemBuilder: (context, index) {
+          return ToDoTile(
+              taskName: toDoList[index][0],
+              taskCompleted: toDoList[index][1],
+              onChanged: (value) => checkBoxChanged(value, index),
+              );
+        },
+      ),
     );
   }
 }
