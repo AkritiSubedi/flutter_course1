@@ -38,7 +38,7 @@ class _TodoPageState extends State<TodoPage> {
               controller: myController,
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
-                hintText: "Type your name..",
+                hintText: "Type your Full Name..",
               ),
             ),
             //button

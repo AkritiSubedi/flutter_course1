@@ -12,7 +12,7 @@ void main() {
 
       debugShowCheckedModeBanner: false,
       home: HomePage(),
-      theme: ThemeData(primarySwatch: Colors.yellow),
+      theme: ThemeData(primarySwatch: Colors.purple),
     );
   }
 }
