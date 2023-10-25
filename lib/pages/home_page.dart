@@ -15,7 +15,7 @@ class _HomePageState extends State<HomePage> {
   final _controller = TextEditingController();
   //List of todo tasks
   List toDoList = [
-    ["Make totorial", false],
+    ["Make tutorial", false],
     ["Do Exercise", false],
   ];
   // checkbox was tapped
@@ -29,7 +29,9 @@ class _HomePageState extends State<HomePage> {
   void saveNewTask() {
     setState(() {
       toDoList.add((_controller.text, false));
+      _controller.clear();
     });
+    Navigator.of(context).pop();
   }
 
   // create a new task
@@ -44,6 +46,13 @@ class _HomePageState extends State<HomePage> {
         );
       },
     );
+  }
+
+  // delete task
+  void deleteTask(int index) {
+    setState(() {
+      toDoList.removeAt(index);
+    });
   }
 
   @override
@@ -65,6 +74,7 @@ class _HomePageState extends State<HomePage> {
             taskName: toDoList[index][0],
             taskCompleted: toDoList[index][1],
             onChanged: (value) => checkBoxChanged(value, index),
+            deleteFunction: (context) => deleteTask(index),
           );
         },
       ),
