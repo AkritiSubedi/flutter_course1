@@ -4,10 +4,18 @@ import 'package:flutter_course1/pages/first_page.dart';
 import 'package:flutter_course1/pages/home_page.dart';
 import 'package:flutter_course1/pages/settings_page.dart';
 import 'package:flutter_course1/pages/todo_page.dart';
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/adapters.dart';
 
-void main() {
+void main() async{
+  //init the hive
+  await Hive.initFlutter();
+
+  //open a box
+  var box = await Hive.openBox('mybox');
   runApp(const MyApp());
 }
+
 
 
       debugShowCheckedModeBanner: false,
