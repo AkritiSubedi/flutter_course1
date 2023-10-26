@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_course1/util/todo_tile.dart';
+import 'package:hive/hive.dart';
 
 import '../util/dialog_box.dart';
 
@@ -11,6 +12,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  // reference the box
+  final _myBox = Hive.openBox('mybox');
   //text controller
   final _controller = TextEditingController();
   //List of todo tasks
