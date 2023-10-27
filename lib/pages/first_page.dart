@@ -37,7 +37,7 @@ class _FirstpageState extends State<Firstpage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("1st page")),
+      appBar: AppBar(title: Text("First page")),
       body: _pages[_selectedIndex],
       
       bottomNavigationBar: BottomNavigationBar(

@@ -5,7 +5,7 @@ class SecondPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("second Page"),),
+      appBar: AppBar(title: Text("2nd Page"),),
     );
   }
 }
