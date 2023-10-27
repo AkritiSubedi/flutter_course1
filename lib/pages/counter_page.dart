@@ -27,7 +27,7 @@ class _CounterPageState extends State<CounterPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("You pushed the button this many times:"),
+            Text("You pushed the button this time:"),
 
             // counter value
             Text(_counter.toString(),

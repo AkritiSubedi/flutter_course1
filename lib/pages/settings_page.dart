@@ -6,7 +6,7 @@ class SettingsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Center(
-        child: Text("Setting Pages")),
+        child: Text("Setting Page")),
     );
   }
 }
